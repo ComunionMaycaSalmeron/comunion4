@@ -12,7 +12,7 @@
 
 <section style="margin-top: 20px; padding: 20px; background: linear-gradient(to bottom, #f3e6dc, #e0cfc1); border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); position: relative; text-align: center; color: #5a4a42; max-width: 90%; margin: auto;">
     <h2 style="font-family: 'Dancing Script', cursive; font-size: 1.8em; color: #8b5e3c;">Confirma tu Asistencia</h2>
-    <div style="position: absolute; bottom: 10px; right: 10px; font-size: 2em; color: gold;">✨ ✝️</div>
+    <div style="position: absolute; bottom: 10px; right: 10px; font-size: 2em; color: gold;"> ✨ ✝️</div>
     <form action="https://formspree.io/f/mnnqngvb" method="POST" style="text-align: left; max-width: 100%; width: 90%; margin: auto; display: flex; flex-direction: column; gap: 15px;">
         <div>
             <label for="guest-name" style="font-weight: bold;">Tu Nombre:</label>
@@ -66,25 +66,22 @@
     </form>
 </section>
 
+<script>
+function toggleAllergyInput(selectId, inputId) {
+    var select = document.getElementById(selectId);
+    var input = document.getElementById(inputId);
+    input.style.display = (select.value === "alergia" || select.value === "intolerancia") ? "block" : "none";
+}
+</script>
+
 <style>
     .responsive-img {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 15vw;
-        max-width: 150px;
+        width: 100%;
+        max-width: 300px;
         height: auto;
+        display: block;
+        margin: 20px auto;
         border-radius: 10px;
-        opacity: 0.8;
-    }
-    
-    @media (max-width: 768px) {
-        .responsive-img {
-            position: relative;
-            width: 50%;
-            max-width: 120px;
-            display: block;
-            margin: 0 auto;
-        }
+        opacity: 0.9;
     }
 </style>
