@@ -1,0 +1,75 @@
+<section style="text-align: center; background: linear-gradient(to bottom right, #f8d3e0, #a0d8e1); padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); position: relative;">
+    <div style="position: absolute; top: 10px; left: 10px; font-size: 2em; color: gold;">✝️ ✨</div>
+    <h2 style="font-family: 'Dancing Script', cursive; font-size: 2em; color: #d67a9a;">¡Estás Invitado!</h2>
+    <p style="font-size: 1.2em; color: #555;">Nos encantaría contar contigo en la comunión de Mayca Salmerón Martínez.</p>
+    <hr style="border: 1px solid #d67a9a; width: 60%; margin: 10px auto;">
+    <p style="font-size: 1.1em; color: #444;"><strong>Fecha:</strong> 3 de mayo de 2025</p>
+    <p style="font-size: 1.1em; color: #444;"><strong>Hora:</strong> 11:00 AM</p>
+    <p style="font-size: 1.1em; color: #444;"><strong>Lugar:</strong> Parroquia Santa Victoria, Córdoba</p>
+    <p style="font-size: 1.1em; color: #444;"><strong>Celebración:</strong> Bar Casa Ramón, Camino La Barquera, 14:00h</p>
+    <img src="./mayca.png.jpg" alt="Mayca" style="position: absolute; top: 10px; right: 10px; width: 150px; height: auto; border-radius: 10px; opacity: 0.8;">
+</section>
+
+<section style="margin-top: 20px; padding: 20px; background: linear-gradient(to bottom, #f3e6dc, #e0cfc1); border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); position: relative; text-align: center; color: #5a4a42;">
+    <h2 style="font-family: 'Dancing Script', cursive; font-size: 1.8em; color: #8b5e3c;">Confirma tu Asistencia</h2>
+    <div style="position: absolute; bottom: 10px; right: 10px; font-size: 2em; color: gold;">✨ ✝️</div>
+    <form action="https://formspree.io/f/mnnqngvb" method="POST" style="text-align: left; max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 15px;">
+        <div>
+            <label for="guest-name" style="font-weight: bold;">Tu Nombre:</label>
+            <input type="text" id="guest-name" name="guest-name" required>
+        </div>
+        
+        <div>
+            <label for="guest-allergy-type" style="font-weight: bold;">¿Alergias o Intolerancias?</label>
+            <select id="guest-allergy-type" name="guest-allergy-type" onchange="toggleAllergyInput('guest-allergy-type', 'guest-allergy')">
+                <option value="">Selecciona una opción</option>
+                <option value="alergia">Alergia</option>
+                <option value="intolerancia">Intolerancia</option>
+                <option value="ninguna">Ninguna</option>
+            </select>
+            <input type="text" id="guest-allergy" name="guest-allergy" placeholder="Especifica aquí" style="display:none;">
+        </div>
+        
+        <div>
+            <label for="companion-name" style="font-weight: bold;">Nombre del Acompañante:</label>
+            <input type="text" id="companion-name" name="companion-name">
+        </div>
+        
+        <div>
+            <label for="companion-allergy-type" style="font-weight: bold;">¿Alergias o Intolerancias del Acompañante?</label>
+            <select id="companion-allergy-type" name="companion-allergy-type" onchange="toggleAllergyInput('companion-allergy-type', 'companion-allergy')">
+                <option value="">Selecciona una opción</option>
+                <option value="alergia">Alergia</option>
+                <option value="intolerancia">Intolerancia</option>
+                <option value="ninguna">Ninguna</option>
+            </select>
+            <input type="text" id="companion-allergy" name="companion-allergy" placeholder="Especifica aquí" style="display:none;">
+        </div>
+        
+        <div>
+            <label for="attendance" style="font-weight: bold;">¿Vais a asistir?</label>
+            <select id="attendance" name="attendance" required>
+                <option value="">Selecciona una opción</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+        <div>
+            <label for="phone" style="font-weight: bold;">Teléfono de Contacto:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div>
+            <label for="email" style="font-weight: bold;">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <button type="submit" style="background: #8b5e3c; color: white; font-size: 1.2em; padding: 10px; border-radius: 5px; border: none; cursor: pointer;">Confirmar Asistencia</button>
+    </form>
+</section>
+
+<script>
+    function toggleAllergyInput(selectId, inputId) {
+        var select = document.getElementById(selectId);
+        var input = document.getElementById(inputId);
+        input.style.display = (select.value === "alergia" || select.value === "intolerancia") ? "block" : "none";
+    }
+</script>
